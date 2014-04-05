@@ -15,7 +15,6 @@ DEFAULT_ANNUAL_SALARY = 4080000
 DEFAULT_HOURS_WORKED_PER_DAY = 8
 DEFAULT_DAYS_WORKED_PER_MONTH = 20
 DEFAULT_NUMBER_OF_PARTICIPANTS = 1
-# XXX: 残業時間
 
 
 def costs_integrator(salary_params=None):
@@ -76,6 +75,7 @@ class PeriodicScreen(object):
             pass
         finally:
             self.end()
+            print(data)
 
     def end(self):
         curses.nocbreak()
