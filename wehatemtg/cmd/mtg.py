@@ -24,21 +24,27 @@ def costs_integrator(salary_params=None):
         'annual_salary',
         DEFAULT_ANNUAL_SALARY
     ) or DEFAULT_ANNUAL_SALARY
+
     hours_worked_per_day = salary_params.get(
         'hours_worked_per_day',
         DEFAULT_HOURS_WORKED_PER_DAY
     ) or DEFAULT_HOURS_WORKED_PER_DAY
+
     days_worked_per_month = salary_params.get(
         'days_worked_per_month',
         DEFAULT_DAYS_WORKED_PER_MONTH
     ) or DEFAULT_DAYS_WORKED_PER_MONTH
+
     number_of_participants = salary_params.get(
         'number_of_participants',
         DEFAULT_NUMBER_OF_PARTICIPANTS
     ) or DEFAULT_NUMBER_OF_PARTICIPANTS
 
+    # 一月当たりの労働時間 (hours)
     hours_worked_per_month = hours_worked_per_day * days_worked_per_month
+    # 一年当たりの労働時間 (seconds)
     seconds_worked_per_year = 12 * hours_worked_per_month * 3600
+    # 一秒当たりの給与
     salary_per_second = Decimal(annual_salary) / seconds_worked_per_year
 
     total = 0
