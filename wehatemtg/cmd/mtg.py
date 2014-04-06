@@ -240,8 +240,12 @@ def _parse_args():
     description = 'We hate meeting'
     arg_parser = argparse.ArgumentParser(description=description)
 
-    option_s_help = 'Member\'s average annual salary'
-    '(shortest, JPY:10k, USD:1M)'
+    option_s_help = 'Member\'s average annual salary ' \
+    '(shortest, JPY:10k, USD:1M) ' \
+    '(default JPY:{0}, USD:{1})'.format(
+        Currencies.salary('JPY'),
+        Currencies.salary('USD'),
+    )
     arg_parser.add_argument(
         '-s', '--annual-salary',
         type=float,
@@ -249,7 +253,8 @@ def _parse_args():
         help=option_s_help,
     )
 
-    option_c_help = 'Currency (e.g. JPY, USD)'
+    option_c_help = 'Currency (e.g. JPY, USD) ' \
+    '(default: {0})'.format(DEFAULT_CURRENCY)
     arg_parser.add_argument(
         '-c', '--currency',
         type=str,
@@ -257,7 +262,8 @@ def _parse_args():
         help=option_c_help,
     )
 
-    option_t_help = 'Member\'s average hours worked per day'
+    option_t_help = 'Member\'s average hours worked per day ' \
+    '(default {0} hours)'.format(DEFAULT_HOURS_WORKED_PER_DAY)
     arg_parser.add_argument(
         '-t', '--hours-worked-per-day',
         type=int,
@@ -265,7 +271,8 @@ def _parse_args():
         help=option_t_help,
     )
 
-    option_d_help = 'Member\'s average days worked per month'
+    option_d_help = 'Member\'s average days worked per month ' \
+    '(default {0} days)'.format(DEFAULT_DAYS_WORKED_PER_MONTH)
     arg_parser.add_argument(
         '-d', '--days-worked-per-month',
         type=int,
@@ -273,7 +280,8 @@ def _parse_args():
         help=option_d_help,
     )
 
-    option_d_help = 'The number of participants of the meeting'
+    option_d_help = 'The number of participants of the meeting ' \
+    '(default {0})'.format(DEFAULT_NUMBER_OF_PARTICIPANTS)
     arg_parser.add_argument(
         '-n', '--number-of-participants',
         type=int,
