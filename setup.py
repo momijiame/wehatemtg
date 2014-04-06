@@ -58,6 +58,6 @@ if __name__ == '__main__':
         zip_safe=False,
         entry_points="""
         [console_scripts]
-        mtg = wehatemtg.cmd.mtg:main
+        wehatemtg = wehatemtg.cmd.mtg:main
         """,
     )
