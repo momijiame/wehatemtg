@@ -21,14 +21,14 @@ DEFAULT_NUMBER_OF_PARTICIPANTS = 1
 class Currencies(object):
     support_currencies = {
         'JPY': {
-            'rate': 10000,
-            'point': 0,
-            'salary': 408,
+            'input_rate': 10000,
+            'show_point': 0,
+            'default_salary': 408,
         },
         'USD': {
-            'rate': 1000000,
-            'point': 2,
-            'salary': 4.08,
+            'input_rate': 1000000,
+            'show_point': 2,
+            'default_salary': 4.08,
         },
     }
 
@@ -38,15 +38,15 @@ class Currencies(object):
 
     @classmethod
     def rate(cls, currency):
-        return cls._currency_profile(currency, 'rate')
+        return cls._currency_profile(currency, 'input_rate')
 
     @classmethod
     def point(cls, currency):
-        return cls._currency_profile(currency, 'point')
+        return cls._currency_profile(currency, 'show_point')
 
     @classmethod
     def salary(cls, currency):
-        return cls._currency_profile(currency, 'salary')
+        return cls._currency_profile(currency, 'default_salary')
 
     @classmethod
     def _currency_profile(cls, currency, profile):
