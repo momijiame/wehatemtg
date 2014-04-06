@@ -32,7 +32,7 @@ $ pip install git+https://github.com/momijiame/wehatemtg.git
 
 # 使い方
 
-wehatemtg をインストールすると mtg コマンドが使えるようになります。
+wehatemtg をインストールすると wehatemtg コマンドが使えるようになります。
 会議が始まったら wehatemtg コマンドを実行しましょう。
 
 例えばオプションを一切指定しない場合には、サラリーマンの平均年収と労働時間を元に 1 人が消費する人件費を表示し続けます。
