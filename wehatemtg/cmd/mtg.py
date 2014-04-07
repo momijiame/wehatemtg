@@ -26,7 +26,7 @@ class Currencies(object):
             'default_salary': 408,
         },
         'USD': {
-            'input_rate': 1000000,
+            'input_rate': 10000,
             'show_point': 2,
             'default_salary': 4.08,
         },
